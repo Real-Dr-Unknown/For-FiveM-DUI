@@ -8,14 +8,15 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-function hehe(event) {
-    event.target.setVolume(75);
-    
-}
-
 
 function onPlayerReady(event) {
     event.target.playVideo();
-    hehe(event);
+
 }
 
+window.addEventListener("message", (event) => {
+
+    if (event.data.type === "unmute") {
+        player.setVolume(75)
+    }
+})
