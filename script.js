@@ -1,6 +1,4 @@
 let player
-let x
-let y
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('yttp', {
@@ -15,3 +13,11 @@ function onPlayerReady(event) {
     event.target.playVideo();
 
 }
+
+
+window.addEventListener("message", (event) => {
+
+    if (event.data.type === "volume") {
+        player.setVolume(event.data.v)
+    }
+})
