@@ -8,8 +8,14 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+function hehe(event) {
+    event.target.setVolume(75);
+    
+}
+
 
 function onPlayerReady(event) {
     event.target.playVideo();
-    event.target.setVolume(75)
+    hehe(event);
 }
+
