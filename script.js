@@ -17,6 +17,7 @@ function onPlayerReady(event) {
 window.addEventListener("message", (event) => {
 
     if (event.data.type === "unmute") {
-        player.setVolume(75)
+        setTimeout(() => 
+        player.setVolume(75), 3000)
     }
 })
